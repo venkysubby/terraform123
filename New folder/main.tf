@@ -15,7 +15,6 @@ resource "azurerm_container_registry" "acr" {
   resource_group_name = azurerm_resource_group.aks-rg.name
   location            = var.location
   sku                 = "Standard"
-  admin_enabled       = false
 }
 
 resource "azurerm_kubernetes_cluster" "aks" {
