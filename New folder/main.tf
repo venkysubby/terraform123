@@ -20,7 +20,6 @@ resource "azurerm_container_registry" "acr" {
 
 resource "azurerm_kubernetes_cluster" "aks" {
   name                = var.cluster_name
-  kubernetes_version  = var.kubernetes_version
   location            = var.location
   resource_group_name = azurerm_resource_group.aks-rg.name
   dns_prefix          = var.cluster_name
