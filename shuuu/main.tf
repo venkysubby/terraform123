@@ -1,6 +1,6 @@
 resource "azurerm_resource_group" "rg" {
   name     = "imagerg435"
-  location = "West Europe"
+  location = "south india"
 }
 
 resource "azurerm_container_registry" "acr" {
