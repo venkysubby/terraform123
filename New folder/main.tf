@@ -15,12 +15,10 @@ resource "azurerm_container_registry" "acr" {
   resource_group_name = azurerm_resource_group.aks-rg.name
   location            = var.location
   sku                 = "Standard"
-  admin_enabled       = false
 }
 
 resource "azurerm_kubernetes_cluster" "aks" {
   name                = var.cluster_name
-  kubernetes_version  = var.kubernetes_version
   location            = var.location
   resource_group_name = azurerm_resource_group.aks-rg.name
   dns_prefix          = var.cluster_name
@@ -30,7 +28,6 @@ resource "azurerm_kubernetes_cluster" "aks" {
     node_count          = var.system_node_count
     vm_size             = "Standard_DS2_v2"
     type                = "VirtualMachineScaleSets"
-    availability_zones  = [1, 2, 3]
     enable_auto_scaling = false
   }
 
@@ -39,7 +36,6 @@ resource "azurerm_kubernetes_cluster" "aks" {
   }
 
   network_profile {
-    load_balancer_sku = "Standard"
     network_plugin    = "kubenet" 
   }
 }
