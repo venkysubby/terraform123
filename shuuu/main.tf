@@ -1,17 +1,17 @@
 resource "azurerm_resource_group" "rg" {
-  name     = "imagerg234"
+  name     = "imagerg435"
   location = "West Europe"
 }
 
 resource "azurerm_container_registry" "acr" {
-  name                = "acrproject32676sli"
+  name                = "acrproject32676syui"
   resource_group_name = azurerm_resource_group.rg.name
   location            = azurerm_resource_group.rg.location
   sku                 = "Premium"
 }
 
 resource "azurerm_kubernetes_cluster" "aks" {
-  name                = "aksproject23268978"
+  name                = "aksproject2326897sef8"
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
   dns_prefix          = "aksaks1"
